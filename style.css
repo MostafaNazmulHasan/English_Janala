@@ -1,0 +1,68 @@
+/* Font Family */
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.hind-siliguri {
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+.tiro-bangla {
+  font-family: "Tiro Bangla", serif;
+}
+
+/* Font Family Ends Here */
+
+/* Colors */
+
+.primary-color {
+  color: rgba(24, 24, 27, 1);
+}
+
+.secondary-color {
+  color: rgba(0, 0, 0, 1);
+}
+.tertiary-color {
+  color: #0844e9;
+}
+.quaternary-color {
+  color: rgba(121, 113, 107, 1);
+}
+.text-color {
+  color: rgba(41, 37, 36, 1);
+}
+
+/* Colors Ends Here */
+.navbar-style {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: rgba(15, 23, 42, 0.1); /* slightly transparent navy */
+  backdrop-filter: blur(40px);
+  border-bottom: 1px solid rgba(198, 189, 189, 1);
+  background-image: linear-gradient(
+      169.25deg,
+      rgba(255, 255, 255, 0.2) 25%,
+      rgba(0, 0, 0, 0) 25%
+    ),
+    linear-gradient(178.08deg, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0) 100%);
+}
+
+#footer {
+  box-sizing: border-box;
+  border-top: 3px solid rgba(255, 235, 235, 1);
+  background: rgba(255, 255, 255, 1);
+}
+
+.fa-brands {
+  font-size: 20px;
+}
+
+
+.active {
+  background-color: #2563eb; /* Tailwind blue-600 */
+  color: white;
+}

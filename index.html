@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English Janala</title>
+
+    <!-- ==================== Style & Framework Links ==================== -->
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- DaisyUI + Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiro+Bangla:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="scroll-smooth">
+    <!-- ==================== Header / Navbar Section ==================== -->
+    <!-- Shows after successful login, hidden by default -->
+    <header class="w-full navbar-style showElement hidden">
+      <nav
+        class="container mx-auto flex md:flex-row flex-col justify-start md:justify-center"
+      >
+        <!-- Logo Section -->
+        <div
+          class="flex w-4/4 md:w-2/4 items-center md:justify-start justify-center gap-2 p-2"
+        >
+          <p class="primary-color poppins text-xl font-semibold">English</p>
+          <img src="./assets/logo.png" alt="English Janala Logo" class="w-10" />
+          <p class="secondary-color tiro-bangla text-xl font-normal">জানালা</p>
+        </div>
+
+        <!-- Navbar Links -->
+        <div
+          class="w-4/4 md:w-2/4 flex justify-center md:justify-end gap-4 items-center p-2 md:flex-row flex-col"
+        >
+          <a href="#Vocabulary">
+            <button class="btn btn-outline btn-primary poppins">
+              <img
+                src="./assets/fa-book-open.png"
+                alt="vocabulary-icon"
+              />Vocabularies
+            </button>
+          </a>
+          <a href="#FAQ">
+            <button class="btn btn-outline btn-primary poppins">
+              <i class="fa-regular fa-circle-question"></i> FAQ
+            </button>
+          </a>
+          <button
+            class="btn btn-outline btn-primary poppins"
+            onclick="logout()"
+          >
+            <img
+              src="./assets/fa-arrow-right-from-bracket.png"
+              alt="faq-icon"
+            />Logout
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ==================== Main Content ==================== -->
+    <main>
+      <!-- ==================== Banner Section ==================== -->
+      <!-- Initial landing page visible before login -->
+      <section class="banner-section w-full hideElement">
+        <div
+          class="container mx-auto flex md:flex-row flex-col items-center justify-center gap-4 p-4"
+        >
+          <!-- Text Content -->
+          <div
+            class="w-4/4 md:w-2/4 flex flex-col gap-4 items-start justify-center"
+          >
+            <h1 class="text-4xl font-bold poppins primary-color">
+              <span class="tertiary-color"> English</span> is Easy!!
+            </h1>
+            <p class="text-2xl font-medium primary-color hind-siliguri">
+              আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+              আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে
+              যাবে অন্য একটি Level এ
+            </p>
+
+            <!-- Login Input Fields -->
+            <div class="w-full flex flex-col gap-4">
+              <!-- Username Input -->
+              <label class="input validator">
+                <svg
+                  class="h-[1em] opacity-50"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </g>
+                </svg>
+                <input
+                  type="text"
+                  id="input-username"
+                  required
+                  placeholder="Enter Your Name"
+                />
+              </label>
+
+              <!-- Password Input -->
+              <label class="input validator">
+                <svg
+                  class="h-[1em] opacity-50"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path
+                      d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"
+                    ></path>
+                    <circle
+                      cx="16.5"
+                      cy="7.5"
+                      r=".5"
+                      fill="currentColor"
+                    ></circle>
+                  </g>
+                </svg>
+                <input
+                  type="password"
+                  id="input-password"
+                  required
+                  placeholder="Enter Password 123456"
+                  minlength="6"
+                />
+              </label>
+            </div>
+
+            <!-- Login Button -->
+            <button
+              class="btn btn-primary poppins text-white text-sm"
+              onclick="showWebsite()"
+            >
+              Get Started
+            </button>
+          </div>
+
+          <!-- Banner Image -->
+          <div class="w-4/4 md:w-2/4 flex items-center justify-center">
+            <img src="./assets/hero-student.png" alt="Banner Image" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== Vocabulary Section ==================== -->
+      <!-- Dynamically generated lesson buttons -->
+      <section
+        id="Vocabulary"
+        class="w-full flex flex-col gap-6 p-4 justify-center items-center pt-80 md:pt-28 showElement hidden"
+      >
+        <div class="text-center poppins text-4xl font-bold primary-color">
+          <h2><span class="tertiary-color">Let's</span> Learn Vocabularies</h2>
+        </div>
+        <div
+          id="vocabulary-button-container"
+          class="vocabulary-button-container grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6"
+        ></div>
+      </section>
+
+      <!-- ==================== No Lesson Selected Section ==================== -->
+      <!-- Shown when no lesson is selected -->
+      <section id="no-lesson-selected" class="container mx-auto hidden">
+        <div
+          class="bg-slate-50 w-full grid justify-center items-center p-14 gap-4"
+        >
+          <p
+            class="hind-siliguri text-sm font-normal quaternary-color text-center"
+          >
+            আপনি এখনো কোন Lesson Select করেন নি
+          </p>
+          <h2
+            class="text-color hind-siliguri text-lg md:text-4xl font-medium text-center"
+          >
+            একটি Lesson Select করুন।
+          </h2>
+        </div>
+      </section>
+
+      <!-- ==================== Lesson Cards Container ==================== -->
+      <section
+        id="lesson-card-container"
+        class="container mx-auto py-20 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-8"
+      ></section>
+
+      <!-- ==================== No Lesson Found Section ==================== -->
+      <section id="no-lesson-found" class="container mx-auto hidden"></section>
+
+      <!-- ==================== Detail Information Modal Section ==================== -->
+      <section id="detail-info-modal" class="container mx-auto"></section>
+
+      <!-- ==================== FAQ Section ==================== -->
+      <section
+        id="FAQ"
+        class="container mx-auto py-32 flex flex-col gap-4 px-2 poppins showElement hidden"
+      >
+        <div
+          class="text-center poppins text-2xl md:text-4xl font-bold primary-color mb-6"
+        >
+          <h2>
+            <span class="tertiary-color">Frequently</span> Asked Questions
+          </h2>
+        </div>
+        <!-- Collapsible FAQ Items -->
+        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-3" checked="checked" />
+          <div class="collapse-title font-semibold">
+            What is English a mix of?
+          </div>
+          <div class="collapse-content text-sm">
+            English is a language that has borrowed words and influences from
+            many other languages over its history. It's primarily a mix of
+            Germanic languages like Old English and Norse, with a significant
+            influence from Latin and French due to historical events. English
+            also incorporates words from Spanish, Dutch, Arabic, and countless
+            other languages due to global interactions. This diversity makes
+            English rich and versatile, with a wide vocabulary and a mix of
+            grammar rules from different language families. It's a constantly
+            evolving language that continues to absorb new words and expressions
+            from various sources.
+          </div>
+        </div>
+        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title font-semibold">
+            What is the difference between "your" and "you're"?
+          </div>
+          <div class="collapse-content text-sm">
+            1."Your" is a possessive adjective (e.g., "This is your book"). 2.
+            "You're" is a contraction of "you are" (e.g., "You're very kind").
+          </div>
+        </div>
+        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title font-semibold">
+            What is the difference between "since" and "for"?
+          </div>
+          <div class="collapse-content text-sm">
+            1. Use "since" with a specific point in time (e.g., "I have lived
+            here since 2020"). 2. Use "for" with a duration of time (e.g., "I
+            have lived here for three years").
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==================== Footer Section ==================== -->
+    <footer
+      id="footer"
+      class="container mx-auto footer sm:footer-horizontal text-black content p-10"
+    >
+      <!-- Branding -->
+      <div class="w-2/2 md:w-1/2">
+        <div class="flex items-center gap-2 p-2">
+          <p class="primary-color poppins text-xl font-semibold">English</p>
+          <img src="./assets/logo.png" alt="English Janala Logo" class="w-10" />
+          <p class="secondary-color tiro-bangla text-xl font-normal">জানালা</p>
+        </div>
+        <p class="hind-siliguri text-xl font-medium">ইংরেজি শিখুন সহজে</p>
+        <p class="text-base hind-siliguri font-normal">
+          Providing ED-Tech Applications since 2025
+        </p>
+      </div>
+
+      <!-- Social Media Links -->
+      <div
+        class="w-2/2 md:w-1/2 flex flex-col gap-4 justify-center md:justify-end md:items-end"
+      >
+        <span class="footer-title poppins text-lg font-semibold"
+          >Follow Us</span
+        >
+        <div class="grid grid-flow-col gap-4">
+          <a href="https://www.facebook.com/" target="_blank"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="https://www.youtube.com/" target="_blank"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
+          <a href="https://www.instagram.com/" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==================== External Scripts ==================== -->
+    <!-- SweetAlert for Alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Main JS File -->
+    <script src="./script/index.js"></script>
+
+    <!-- ==================== Loading Spinner ==================== -->
+    <div
+      id="loading-spinner"
+      class="hidden fixed inset-0 bg-white bg-opacity-70 flex justify-center items-center z-50"
+    >
+      <span class="loading loading-spinner loading-lg text-cyan-500"></span>
+    </div>
+  </body>
+</html>
